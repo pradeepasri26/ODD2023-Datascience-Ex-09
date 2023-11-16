@@ -30,39 +30,38 @@ tips
 tips.head()
 
 tips.info()
-Which day of the week has the highest total bill amount?
+
 sns.barplot(x='day',y='total_bill',data=tips)
 plt.title("Weekly highest total bill amount")
-What is the average tip amount given by smokers and non-smokers?
+
 sns.barplot(x='smoker',y='tip',data=tips, palette='rainbow')
 plt.title("Average tip amount given by smokers and non-smokers")
-How does the tip percentage vary based on the size of the dining party?
+
 sns.boxplot(x='size', y='tip',data=tips)
 plt.title("Tip percentage based on the sizes of the dining party")
-Which gender tends to leave higher tips?
+
 sns.boxplot(x='sex', y='tip',data=tips)
 plt.title("Higher tips based on gender")
-Is there any relationship between the total bill amount and the day of the week?
+
 plt.plot(tips['day'],tips['total_bill'])
 plt.title("Relationship between the total bill amount and the day of the week")
 plt.show()
-How does the distribution of total bill amounts vary across different time periods (lunch vs. dinner)?
+
 sns.violinplot(x='time',y='total_bill',data=tips)
 plt.title("Distribution of total bill amounts vary across different time periods(lunch vs. dinner)")
-Which dining party size group tends to have the highest average total bill amount?
+
 sns.barplot(x='size',y='total_bill',data=tips)
 plt.title("Highest average total bill amount based party size")
-What is the distribution of tip amounts for each day of the week?
+
 sns.boxplot(x='day',y='total_bill',data=tips)
 plt.title("Distribution of tip amounts for each day of the week")
-How does the tip amount vary based on the type of service (lunch vs. dinner)?
+
 sns.violinplot(x='time',y='tip',data=tips)
 plt.title("Tip based on the type of service ")
-Is there any correlation between the total bill amount and the tip amount?
 sns.scatterplot(data=tips, x='total_bill', y='tip')
 correlation_coefficient = tips['total_bill'].corr(tips['tip'])
 print("Correlation Coefficient:", correlation_coefficient)
-heatmap
+
 tips.corr()
 plt.subplots(figsize=(7,5))
 sns.heatmap(tips.corr(),annot=True)
